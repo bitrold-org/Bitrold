@@ -1,0 +1,29 @@
+[package]
+name = "xpallet-transaction-fee-rpc"
+version = "5.2.3"
+authors = ["The ChainX Authors"]
+edition = "2021"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "3.0.0" }
+jsonrpc-core = "18.0.0"
+jsonrpc-core-client = "18.0.0"
+jsonrpc-derive = "18.0.0"
+serde = { version = "1.0", features = ["derive"] }
+
+# Substrate primitives
+sp-api = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+sp-blockchain = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+sp-core = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+sp-runtime = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+
+# Substrate pallets
+pallet-transaction-payment-rpc = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+
+xp-rpc = { path = "../../../primitives/rpc" }
+
+# ChainX pallets api
+xpallet-transaction-fee-rpc-runtime-api = { path = "./runtime-api" }

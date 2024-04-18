@@ -1,0 +1,13 @@
+[package]
+name = "xp-rpc"
+version = "5.2.3"
+authors = ["The ChainX Authors"]
+edition = "2021"
+
+[dependencies]
+hex = "0.4"
+jsonrpc-core = "18.0.0"
+serde = { version = "1.0", features = ["derive"] }
+
+[dev-dependencies]
+serde_json = "1.0"

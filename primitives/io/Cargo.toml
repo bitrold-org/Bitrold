@@ -1,0 +1,26 @@
+[package]
+name = "xp-io"
+version = "5.2.3"
+authors = ["The ChainX Authors"]
+edition = "2021"
+
+[dependencies]
+codec = { package = "parity-scale-codec", version = "3.0.0", default-features = false }
+
+# Substrate primitives
+sp-core = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2", default-features = false }
+sp-runtime = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2", default-features = false }
+sp-runtime-interface = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2", default-features = false }
+
+[dev-dependencies]
+hex = "0.4"
+
+[features]
+default = ["std"]
+std = [
+    "codec/std",
+    # Substrate primitives
+    "sp-core/std",
+    "sp-runtime/std",
+    "sp-runtime-interface/std",
+]

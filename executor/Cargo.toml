@@ -1,0 +1,25 @@
+[package]
+name = "chainx-executor"
+version = "5.2.3"
+authors = ["The ChainX Authors"]
+edition = "2021"
+
+[dependencies]
+frame-benchmarking = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+sc-executor = { git = "https://github.com/chainx-org/substrate", branch = "polkadot-v0.9.18-fix2" }
+
+# ChainX runtime
+chainx-runtime = { path = "../runtime/chainx" }
+dev-runtime = { path = "../runtime/dev" }
+malan-runtime = { path = "../runtime/malan" }
+
+# ChainX primitives
+xp-io = { path = "../primitives/io" }
+
+[features]
+wasmtime = [
+    "sc-executor/wasmtime",
+]
+wasmi-errno = [
+    "sc-executor/wasmi-errno",
+]
